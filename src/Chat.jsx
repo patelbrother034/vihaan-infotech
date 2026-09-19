@@ -127,7 +127,7 @@ export default function Chat() {
             </span>
             <div>
               <h2>Ask Vihaan</h2>
-              <p>IT service assistant · Gemini</p>
+              <p>Only service topics are shared with Google</p>
             </div>
             <button
               className="icon-button"

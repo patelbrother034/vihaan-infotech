@@ -183,12 +183,12 @@ test("caps local requests to eight per minute", async () => {
   assert.equal(calls, 8);
 });
 
-test("forwards the full ordered conversation including longer model replies", async () => {
+test("sends only fixed service labels, never personal details or conversation history", async () => {
   let sent;
   const messages = [
-    { role: "user", text: "I have seven cameras." },
-    { role: "model", text: "A".repeat(2500) },
-    { role: "user", text: "How many did I mention?" },
+    { role: "user", text: "CCTV for Jane Doe, jane@example.com, +91 9999999999, 123 Private Lane." },
+    { role: "model", text: "Private customer records " + "A".repeat(2500) },
+    { role: "user", text: "Help with this requirement." },
   ];
   const middleware = createChatMiddleware(
     { GEMINI_API_KEY: "test-key" },
@@ -208,8 +208,21 @@ test("forwards the full ordered conversation including longer model replies", as
   assert.equal(res.statusCode, 200);
   assert.deepEqual(
     sent.contents,
-    messages.map((m) => ({ role: m.role, parts: [{ text: m.text }] })),
+    [{ role: "user", parts: [{ text: "Explain these IT services: CCTV and surveillance" }] }],
   );
+  for (const personal of ["Jane", "jane@example.com", "9999999999", "Private Lane", "Mayur", "8160747279", "vihaaninfotech0987", "Pratishtha", "Private customer records"])
+    assert.equal(JSON.stringify(sent).includes(personal), false);
+});
+
+test("contact questions and unrecognized messages are answered without Google", async () => {
+  let called = false;
+  const middleware = createChatMiddleware({}, { fetchImpl: async () => { called = true; } });
+  for (const text of ["What is your contact email?", "Jane Doe 123 Private Lane", "Hello"]) {
+    const res = await run(middleware, { body: { messages: [{ role: "user", text }] } });
+    assert.equal(res.statusCode, 200);
+    assert.ok(res.body.reply);
+  }
+  assert.equal(called, false);
 });
 test("rejects history that starts with a model message", async () => {
   let called = false;
