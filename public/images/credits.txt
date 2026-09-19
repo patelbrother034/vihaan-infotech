@@ -1,0 +1,13 @@
+Local image attribution - Pexels photographs
+
+infrastructure.jpg: Brett Sayles
+https://www.pexels.com/photo/server-racks-on-data-center-4508751/
+
+cctv.jpg: Giant Asparagus
+https://www.pexels.com/photo/cctv-surveillance-camera-on-urban-wall-37591157/
+
+networking.jpg: Brett Sayles
+https://www.pexels.com/photo/cables-connected-to-ethernet-ports-2881232/
+
+Photos downloaded for this local preview. Pexels license:
+https://www.pexels.com/license/

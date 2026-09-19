@@ -1,0 +1,48 @@
+Vihaan Infotech - rebuilt localhost edition
+
+START
+1. Open a terminal in this folder.
+2. Run npm install (first time only).
+3. Run npm run dev.
+4. Open http://127.0.0.1:5173/
+Stop the server with Ctrl+C in its terminal.
+
+LOCAL ONLY
+Development and preview bind to 127.0.0.1. No hosting, publishing,
+deployment configuration, remote repository, or tunnel is configured.
+The website's images and styling are served locally.
+
+GEMINI CHAT
+The local server uses GEMINI_API_KEY from .env.local.
+The source ZIP intentionally excludes that private file.
+After extracting the ZIP, copy .env.example to .env.local, add your key,
+and restart the server. The default model is gemini-3.1-flash-lite.
+This model has a free tier; actual quotas and billing depend on your
+Google project. No billing settings were changed by this rebuild.
+Chat sends only the chat conversation and business instructions to Google.
+The key is server-side and is never included in the browser build.
+Chat history and unsent drafts use sessionStorage in the current tab.
+History survives refresh and clears when the tab closes (browser session restore may restore it). Use New chat to clear it immediately. Up to 20 completed exchanges are retained; the most recent context up to 24,000 characters is sent to Gemini. Failed or interrupted requests remain drafts for manual retry.
+The consultation form never sends data to Gemini or any other service.
+
+CONTENT
+Contact details are labeled placeholders. Replace them in src/Sections.jsx.
+Services and main layout: src/App.jsx.
+Solution tabs, AMC, about, process and demo form: src/Sections.jsx.
+Chat UI: src/Chat.jsx. Local Gemini proxy: server/chat.mjs.
+Photos and attribution: public/images/.
+No original private environment data was reconstructed from chat history.
+
+CHECKS
+npm run build
+node --test tests/*.test.mjs
+npm run preview (local build preview with chat middleware)
+
+BACKUP
+Run powershell -File scripts/package-source.ps1.
+The resulting ZIP excludes private keys, dependencies, build output,
+and recovery records. Keep it in a safe location outside this folder.
+
+This is a reconstruction based on the saved brief and conversation, not
+an exact copy of the deleted original project.
+

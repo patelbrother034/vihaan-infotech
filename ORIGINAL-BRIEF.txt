@@ -1,0 +1,466 @@
+Build a complete professional business website in React for an IT services company named:
+
+VIHAAN INFOTECH
+
+Business services:
+1. CCTV Installation & Surveillance
+2. Computer Hardware & Networking
+3. Server Installation & Management
+4. AMC (Annual Maintenance Contract)
+5. IT Infrastructure Support
+6. Network Setup & Troubleshooting
+7. Computer/Laptop Hardware Support
+8. Server Maintenance & Support
+
+IMPORTANT DEVELOPMENT RULES:
+- Build the website using React.
+- The website must run ONLY on localhost during development.
+- NEVER deploy, publish, host, or upload the website anywhere.
+- Do NOT use Vercel, Netlify, Firebase Hosting, GitHub Pages, Cloudflare Pages, or any other hosting/deployment service.
+- Do not create or configure production hosting.
+- Do not expose the website publicly.
+- Use localhost for testing only.
+- If a dev server is required, run it locally, e.g. http://localhost:5173.
+- Do not modify unrelated projects or files.
+- First inspect the existing project structure only if necessary.
+- If this is an empty/new project, create the React project structure cleanly.
+- Do not read existing .md files unless specifically required.
+- Keep the implementation clean, maintainable, and production-quality even though it will remain localhost-only.
+
+WEBSITE GOAL:
+Create a modern, trustworthy, premium-looking business website for Vihaan Infotech that makes a visitor immediately understand that the company provides complete CCTV, computer hardware, networking, server, and AMC solutions.
+
+DESIGN DIRECTION:
+- Professional IT infrastructure company appearance.
+- Modern and clean UI.
+- Premium corporate look.
+- Strong visual hierarchy.
+- Suitable for both individual customers and businesses.
+- Avoid an overly generic template appearance.
+- Use subtle animations and hover effects.
+- Good spacing and typography.
+- Strong CTA buttons.
+- Responsive for desktop, laptop, tablet, and web browser widths.
+- Mobile responsiveness is not required.
+- Use a professional technology-oriented visual style.
+- Avoid excessive gradients, excessive animations, or flashy effects.
+
+BRAND:
+Company name:
+Vihaan Infotech
+
+Suggested tagline:
+"Complete IT Infrastructure & Security Solutions"
+
+Alternative supporting message:
+"Reliable CCTV, Networking, Servers, Hardware & AMC Solutions for Businesses and Homes."
+
+PAGES/SECTIONS:
+
+1. HEADER / NAVIGATION
+Create a sticky professional header containing:
+- Vihaan Infotech logo/wordmark
+- Home
+- Services
+- Solutions
+- About Us
+- AMC
+- Contact
+
+CTA:
+"Get a Free Consultation"
+
+Header should remain clean while scrolling.
+
+2. HERO SECTION
+
+Main heading:
+"Complete IT Infrastructure & Security Solutions"
+
+Supporting text:
+"From CCTV surveillance and networking to servers, computer hardware and AMC support, Vihaan Infotech provides reliable technology solutions for businesses and organizations."
+
+Primary CTA:
+"Get a Free Consultation"
+
+Secondary CTA:
+"Explore Services"
+
+Include a professional technology visual related to:
+- CCTV cameras
+- Server racks
+- Network infrastructure
+- Computers
+- Security monitoring
+
+The hero should immediately communicate that this is an IT infrastructure and security services company.
+
+3. TRUST / VALUE STRIP
+
+Create 4-5 short value points:
+
+- Reliable IT Support
+- Professional Installation
+- Fast Troubleshooting
+- Complete AMC Solutions
+- Business-Ready Infrastructure
+
+4. SERVICES SECTION
+
+Heading:
+"Our IT Services"
+
+Create attractive service cards for:
+
+CCTV & Surveillance
+- CCTV camera installation
+- DVR/NVR setup
+- Remote monitoring
+- Surveillance system maintenance
+
+Computer Hardware
+- Desktop & laptop support
+- Hardware installation
+- Upgrades
+- Troubleshooting
+- Peripheral setup
+
+Networking
+- LAN/WAN setup
+- Router & switch configuration
+- Structured networking
+- Wi-Fi/network troubleshooting
+- Network expansion
+
+Server Solutions
+- Server installation
+- Server configuration
+- Storage solutions
+- Server maintenance
+- Backup infrastructure
+- Troubleshooting
+
+AMC Services
+- Preventive maintenance
+- Hardware support
+- Network support
+- CCTV maintenance
+- Server support
+- Regular system checks
+
+IT Infrastructure
+- Complete office IT setup
+- Computer deployment
+- Network infrastructure
+- Server room setup
+- Security infrastructure
+
+Each service should have:
+- Icon
+- Title
+- Short description
+- "Learn More" interaction
+
+5. CCTV SECTION
+
+Create a dedicated visually strong section.
+
+Heading:
+"Complete CCTV & Surveillance Solutions"
+
+Explain:
+"We design, install and maintain CCTV surveillance systems for offices, shops, warehouses, residential properties and other premises."
+
+Show solution items:
+- CCTV Camera Installation
+- DVR / NVR Configuration
+- IP Camera Setup
+- Remote Mobile Monitoring
+- Recording & Storage
+- CCTV Maintenance
+
+CTA:
+"Discuss Your CCTV Requirement"
+
+6. NETWORKING SECTION
+
+Heading:
+"Reliable Computer Networking Solutions"
+
+Content should explain that Vihaan Infotech can design, install, configure and maintain business networks.
+
+Include:
+- LAN setup
+- Wi-Fi networking
+- Router configuration
+- Switch configuration
+- Structured cabling
+- Network troubleshooting
+- Network expansion
+- Connectivity optimization
+
+Show a professional network/infrastructure visual.
+
+7. SERVER SOLUTIONS SECTION
+
+Heading:
+"Server Setup & Maintenance"
+
+Include:
+- Server installation
+- Server configuration
+- File/server infrastructure
+- Storage configuration
+- Backup solutions
+- Server monitoring
+- Preventive maintenance
+- Troubleshooting
+
+Add a CTA:
+"Get Server Support"
+
+8. AMC SECTION
+
+Make AMC one of the strongest sections.
+
+Heading:
+"Keep Your IT Infrastructure Running Smoothly"
+
+Explain AMC clearly.
+
+Include:
+"Annual Maintenance Contracts designed to reduce downtime, prevent recurring problems and keep your IT infrastructure reliable."
+
+AMC coverage:
+- Computers
+- Laptops
+- Servers
+- Networking equipment
+- CCTV systems
+- Printers/peripherals
+- IT infrastructure
+
+Create a professional AMC benefits layout:
+
+Preventive Maintenance
+Regular checks to identify issues before they become major problems.
+
+Faster Issue Resolution
+Quick support for hardware, networking and infrastructure problems.
+
+Reduced Downtime
+Keep business-critical systems operational.
+
+Single IT Support Partner
+Manage multiple IT requirements through one service provider.
+
+9. WHY CHOOSE US
+
+Heading:
+"Why Businesses Choose Vihaan Infotech"
+
+Create 5-6 cards:
+
+- Experienced Technical Support
+- Reliable Service
+- Complete IT Solutions
+- Fast Response
+- Preventive Maintenance
+- Cost-Effective Support
+
+Keep claims generic and believable. Do NOT invent years of experience, number of customers, certifications, brands, awards, or client names.
+
+10. INDUSTRIES / USE CASES
+
+Heading:
+"Solutions for Every Business Environment"
+
+Show:
+- Offices
+- Shops & Retail
+- Warehouses
+- Educational Institutions
+- Residential Properties
+- Small & Medium Businesses
+- Commercial Buildings
+
+11. PROCESS SECTION
+
+Heading:
+"How We Work"
+
+Show a simple 4-step process:
+
+01 — Understand
+Understand the requirement and existing infrastructure.
+
+02 — Plan
+Recommend the right solution based on the requirement.
+
+03 — Install
+Professionally install and configure the system.
+
+04 — Support
+Provide ongoing maintenance and technical support.
+
+12. ABOUT US
+
+Heading:
+"About Vihaan Infotech"
+
+Create professional generic company copy focused on:
+- IT infrastructure
+- CCTV
+- Networking
+- Servers
+- Hardware
+- AMC
+- Technical support
+
+Do not invent company history, founding year, employee count, certifications, or customer numbers.
+
+13. CTA SECTION
+
+Strong full-width CTA:
+
+"Need Reliable IT Support?"
+
+"Whether you need CCTV installation, office networking, server support, computer hardware assistance or AMC services, Vihaan Infotech can help."
+
+Buttons:
+"Request a Consultation"
+"Contact Us"
+
+14. CONTACT SECTION
+
+Heading:
+"Let's Discuss Your IT Requirement"
+
+Create a professional contact form with:
+- Name
+- Company Name
+- Phone Number
+- Email
+- Service Required
+- Message
+
+Service dropdown:
+- CCTV
+- Computer Hardware
+- Networking
+- Server
+- AMC
+- Complete IT Infrastructure
+- Other
+
+IMPORTANT:
+Since this is localhost-only, do NOT connect the form to a real backend, email service, CRM, WhatsApp API, or external service.
+
+For now:
+- Validate the form on the client side.
+- Show a professional success message after submission.
+- Clearly treat it as a frontend/demo form.
+
+Also provide placeholder contact details where actual business information is not supplied. Label placeholders clearly so they can easily be replaced later.
+
+15. FOOTER
+
+Include:
+Vihaan Infotech
+"Complete IT Infrastructure & Security Solutions"
+
+Quick Links:
+Home
+Services
+About
+AMC
+Contact
+
+Services:
+CCTV
+Hardware
+Networking
+Servers
+AMC
+
+Add:
+© 2026 Vihaan Infotech. All rights reserved.
+
+Do not add fake social media links.
+
+TECHNICAL REQUIREMENTS:
+
+- React
+- Use a clean component-based architecture.
+- Components should be reusable.
+- Use sensible folder structure.
+- Use CSS/CSS modules or another lightweight styling approach.
+- Avoid unnecessary dependencies.
+- Use icons from a reliable installed/icon library if appropriate; otherwise use simple SVG icons.
+- No backend is required.
+- No database is required.
+- No authentication is required.
+- No external API is required.
+- Contact form should remain frontend-only.
+- Keep assets organized.
+- Optimize layout and performance.
+- Use semantic HTML.
+- Add appropriate hover/focus states.
+- Ensure good accessibility.
+- Add smooth scrolling where appropriate.
+- Add subtle entrance animations without making the site heavy.
+
+VISUAL QUALITY:
+
+The final result should look like a real professional IT infrastructure company's website, not a basic student/demo React project.
+
+Use:
+- Strong hero section
+- Professional cards
+- Consistent iconography
+- Clean typography
+- Proper section spacing
+- Modern navigation
+- Professional CTA sections
+- High-quality technology imagery/placeholders
+- Subtle shadows/borders
+- Good contrast
+- Consistent design system
+
+IMPORTANT CONTENT RULE:
+Do not fabricate:
+- Customer names
+- Customer logos
+- Reviews/testimonials
+- Certifications
+- Awards
+- Years of experience
+- Number of installations
+- Number of customers
+- Specific brand partnerships
+- Government contracts
+- Any other factual business claims
+
+Use generic content or clearly marked placeholders wherever actual business information is not provided.
+
+FINAL TESTING:
+
+After implementation:
+1. Start the React application locally.
+2. Open it in the local browser.
+3. Check every section visually.
+4. Check all navigation links.
+5. Check CTA buttons.
+6. Check the contact form validation and success state.
+7. Check desktop/laptop/tablet browser widths.
+8. Fix layout issues, overflow, spacing, typography, alignment and console errors.
+9. Ensure there are no broken images/assets.
+10. Ensure the website works completely on localhost.
+
+MOST IMPORTANT:
+The website must remain LOCALHOST ONLY.
+Do not deploy it.
+Do not host it.
+Do not publish it.
+Do not connect it to any hosting provider.
+Do not create deployment configuration unless it is strictly necessary for local development.
