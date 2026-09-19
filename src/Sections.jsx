@@ -14,6 +14,7 @@ import {
   Phone,
   Mail,
   MapPin,
+  Instagram,
   Building2,
   Store,
   Warehouse,
@@ -465,15 +466,16 @@ function Contact({ selected, setSelected }) {
             </p>
             <div className="contact-details">
               {[
-                [Phone, "Phone", "To be added"],
-                [Mail, "Email", "To be added"],
-                [MapPin, "Address & service area", "To be added"],
-              ].map(([Icon, label, text]) => (
+                [Phone, "Mayur Panchal (IT Professional)", "8160747279", "tel:+918160747279"],
+                [Mail, "Email", "vihaaninfotech0987@gmail.com", "mailto:vihaaninfotech0987@gmail.com"],
+                [MapPin, "Address", "FF-106 Pratishtha hills, Opp. Shyam Kutir - 56 Bunglows, Naroda-Dehegam Road, Ahmedabad-382330"],
+                [Instagram, "Instagram", "@vihaaninfotech_2023", "https://www.instagram.com/vihaaninfotech_2023/"],
+              ].map(([Icon, label, text, href]) => (
                 <div key={label}>
                   <Icon size={20} />
                   <div>
                     <strong>{label}</strong>
-                    <span>{text} · placeholder</span>
+                    {href ? <a href={href}>{text}</a> : <span>{text}</span>}
                   </div>
                 </div>
               ))}

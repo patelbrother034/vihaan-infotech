@@ -94,30 +94,29 @@ header {
   gap: 10px;
   font-size: 24px;
   font-weight: 800;
-  letter-spacing: 1px;
+  letter-spacing: 0;
   line-height: 1;
 }
 .logo small {
-  font-size: 10px;
-  letter-spacing: 5px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9px;
+  letter-spacing: 0.3px;
   display: block;
   margin-top: 7px;
 }
 .logo-mark {
-  height: 43px;
-  width: 43px;
-  background: var(--lime);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 9px;
-  font-size: 32px;
-  letter-spacing: -4px;
-  color: var(--navy);
-  padding-right: 4px;
+  height: 54px;
+  width: 54px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
-.logo-mark span {
-  color: var(--blue);
+.logo-wordmark {
+  font-family: Georgia, "Times New Roman", serif;
+  color: #42375e;
+  white-space: nowrap;
+}
+footer .logo-wordmark {
+  color: #fff;
 }
 .nav {
   display: flex;

@@ -38,6 +38,8 @@ export const services = [
       "Hardware installation and upgrades",
       "Troubleshooting and repairs",
       "Printer and peripheral setup",
+      "Refurbished laptops and desktops",
+      "Gaming and editing systems",
     ],
   },
   {
@@ -74,6 +76,7 @@ export const services = [
       "Hardware and network support",
       "CCTV and server maintenance",
       "Planned ongoing support",
+      "Repairs, maintenance and upgrades",
     ],
   },
   {
@@ -86,17 +89,18 @@ export const services = [
       "Computer deployment",
       "Server room infrastructure",
       "Network and security systems",
+      "Software installation and configuration",
+      "Data recovery and data management",
+      "Attendance systems and antivirus",
     ],
   },
 ];
 export function Logo() {
   return (
     <a className="logo" href="#home" aria-label="Vihaan Infotech home">
-      <span className="logo-mark">
-        V<span>·</span>
-      </span>
-      <span>
-        VIHAAN<small>INFOTECH</small>
+      <img className="logo-mark" src="/images/vihaan-logo.png" alt="" width="54" height="54" />
+      <span className="logo-wordmark">
+        Vihaan Infotech<small>ALL TYPE OF IT SOLUTION</small>
       </span>
     </a>
   );
@@ -216,7 +220,7 @@ export default function App() {
                 <em>Protected.</em>
               </h1>
               <p className="hero-subtitle">
-                Complete IT infrastructure & security solutions.
+                All type of IT solution. Sales, services & support.
               </p>
               <p className="hero-description">
                 From the camera at your door to the server at your core. CCTV,
@@ -335,9 +339,9 @@ export default function App() {
           <div>
             <Logo />
             <p>
-              Complete IT infrastructure
+              All type of IT solution.
               <br />
-              &amp; security solutions.
+              Sales · Services · Support
             </p>
           </div>
           <div>
