@@ -11,13 +11,16 @@ async function run(
     origin = "http://127.0.0.1:5173",
     body = good,
     host = "127.0.0.1:5173",
+    remoteAddress = "127.0.0.1",
+    parsed = false,
   } = {},
 ) {
   const req = Readable.from([JSON.stringify(body)]);
   req.url = url;
   req.method = method;
   req.headers = { host, origin, "content-type": "application/json" };
-  req.socket = { remoteAddress: "127.0.0.1" };
+  req.socket = { remoteAddress };
+  if (parsed) req.body = body;
   const res = {
     setHeader() {},
     end(value) {
@@ -42,6 +45,47 @@ test("rejects foreign origins before sending anything to Google", async () => {
   const res = await run(m, { origin: "https://other.example" });
   assert.equal(res.statusCode, 403);
   assert.equal(called, false);
+});
+
+test("Vercel accepts HTTPS production and preview requests with parsed bodies", async () => {
+  let calls = 0;
+  const m = createChatMiddleware(
+    { GEMINI_API_KEY: "test-key", VERCEL_URL: "preview-example.vercel.app" },
+    { deployment: true, fetchImpl: async () => {
+      calls++;
+      return { ok: true, json: async () => ({ candidates: [{ content: { parts: [{ text: "Hello" }] } }] }) };
+    } },
+  );
+  for (const host of ["vihaan-infotech.vercel.app", "preview-example.vercel.app"]) {
+    const res = await run(m, { host, origin: `https://${host}`, remoteAddress: "10.0.0.1", parsed: true });
+    assert.equal(res.statusCode, 200);
+    assert.equal(res.body.reply, "Hello");
+  }
+  assert.equal(calls, 2);
+});
+
+test("Vercel rejects foreign, missing and insecure origins and unknown hosts", async () => {
+  const m = createChatMiddleware({ GEMINI_API_KEY: "test-key" }, {
+    deployment: true, fetchImpl: async () => { throw new Error("Must not contact Google"); },
+  });
+  for (const origin of ["https://other.example", undefined, "http://vihaan-infotech.vercel.app"]) {
+    // null preserves an absent origin through the helper's default value.
+    const res = await run(m, { host: "vihaan-infotech.vercel.app", origin: origin ?? null });
+    assert.equal(res.statusCode, 403);
+  }
+  assert.equal((await run(m, { host: "other.example", origin: "https://other.example" })).statusCode, 403);
+});
+
+test("Vercel rejects oversized parsed payloads and invalid messages", async () => {
+  const m = createChatMiddleware({ GEMINI_API_KEY: "test-key" }, { deployment: true });
+  const options = { host: "vihaan-infotech.vercel.app", origin: "https://vihaan-infotech.vercel.app", parsed: true };
+  assert.equal((await run(m, { ...options, body: { padding: "x".repeat(120001) } })).statusCode, 413);
+  assert.equal((await run(m, { ...options, body: { messages: [] } })).statusCode, 400);
+});
+
+test("local middleware still blocks remote access", async () => {
+  const res = await run(createChatMiddleware({ GEMINI_API_KEY: "test-key" }), { remoteAddress: "10.0.0.1" });
+  assert.equal(res.statusCode, 403);
 });
 test("rejects oversized messages without contacting Google", async () => {
   let called = false;

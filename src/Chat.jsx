@@ -79,7 +79,7 @@ export default function Chat() {
         data = await response.json();
       } catch {
         throw new Error(
-          "The local chat server is unavailable. Your conversation and draft are kept in this tab. Try again when the server is running.",
+          "Chat is temporarily unavailable. Your conversation and draft are kept in this tab. Please try again shortly.",
         );
       }
       if (!response.ok)
@@ -100,7 +100,7 @@ export default function Chat() {
         e.name === "TimeoutError"
           ? "The response took too long. Your conversation is kept; send your message again."
           : e instanceof TypeError
-            ? "Cannot reach the local chat server. Your conversation and draft are kept in this tab."
+            ? "Cannot reach chat. Your conversation and draft are kept in this tab. Please check your connection and try again."
             : e.message,
       );
       setInput(trimmed);
