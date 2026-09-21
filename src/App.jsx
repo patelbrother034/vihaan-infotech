@@ -136,29 +136,36 @@ export function Button({
 export default function App() {
   useEffect(() => {
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (motion.matches || !("IntersectionObserver" in window)) return;
+    if (!("IntersectionObserver" in window)) return;
+    const elements = document.querySelectorAll(
+      ".section-heading, .service-card, .solution-tabs, .solution-panel, .amc-top, .amc-benefits article, .about-grid > div, .industry-list > *, .process-grid article, .cta-band .container, .contact-grid > div, .contact-form, .footer-main > div",
+    );
+    const revealed = new WeakSet();
     const observer = new IntersectionObserver(
       (entries) => {
         for (const entry of entries) {
           if (entry.isIntersecting) {
             entry.target.classList.add("reveal-enter");
+            revealed.add(entry.target);
             observer.unobserve(entry.target);
           }
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.08, rootMargin: "0px 0px -32px 0px" },
     );
-    const elements = document.querySelectorAll(
-      ".section-heading, .service-card, .amc-top, .amc-benefits article, .about-grid, .process-grid article",
-    );
-    elements.forEach((element) => observer.observe(element));
-    const stop = () => {
-      if (motion.matches) observer.disconnect();
+    const syncMotion = () => {
+      observer.disconnect();
+      elements.forEach((element) => {
+        if (motion.matches) element.classList.remove("reveal-enter");
+        else if (!revealed.has(element)) observer.observe(element);
+      });
     };
-    motion.addEventListener("change", stop);
+    syncMotion();
+    motion.addEventListener("change", syncMotion);
     return () => {
       observer.disconnect();
-      motion.removeEventListener("change", stop);
+      motion.removeEventListener("change", syncMotion);
+      elements.forEach((element) => element.classList.remove("reveal-enter"));
     };
   }, []);
   const [menu, setMenu] = useState(false);

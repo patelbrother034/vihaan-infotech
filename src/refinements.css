@@ -19,6 +19,16 @@
     transform: translateY(0) scale(1);
   }
 }
+@keyframes scroll-enter {
+  from {
+    opacity: 0;
+    transform: translate3d(var(--reveal-x, 0px), var(--reveal-y, 28px), 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
 @keyframes thinking {
   0%,
   80%,
@@ -39,7 +49,42 @@
     animation: gentle-enter 0.65s 0.08s ease-out both;
   }
   .reveal-enter {
-    animation: gentle-enter 0.45s ease-out both;
+    animation: scroll-enter 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+    animation-delay: var(--reveal-delay, 0ms);
+  }
+  .service-card:nth-child(3n + 2),
+  .amc-benefits article:nth-child(2),
+  .process-grid article:nth-child(2),
+  .footer-main > div:nth-child(2) {
+    --reveal-delay: 80ms;
+  }
+  .service-card:nth-child(3n),
+  .amc-benefits article:nth-child(3),
+  .process-grid article:nth-child(3),
+  .footer-main > div:nth-child(3) {
+    --reveal-delay: 160ms;
+  }
+  .amc-benefits article:nth-child(4),
+  .process-grid article:nth-child(4),
+  .footer-main > div:nth-child(4) {
+    --reveal-delay: 240ms;
+  }
+  .about-grid > div:first-child,
+  .contact-grid > div {
+    --reveal-x: -24px;
+    --reveal-y: 0px;
+  }
+  .about-grid > div:last-child,
+  .contact-form {
+    --reveal-x: 24px;
+    --reveal-y: 0px;
+    --reveal-delay: 100ms;
+  }
+  .industry-list > :nth-child(even) {
+    --reveal-delay: 100ms;
+  }
+  .reveal-enter:focus-within {
+    animation: none;
   }
   .chat-panel {
     animation: chat-enter 0.2s ease-out both;
@@ -134,6 +179,18 @@
   font-size: 11px;
 }
 @media (max-width: 650px) {
+  .reveal-enter,
+  .about-grid > div.reveal-enter,
+  .contact-grid > .reveal-enter,
+  .service-card.reveal-enter,
+  .amc-benefits article.reveal-enter,
+  .process-grid article.reveal-enter,
+  .footer-main > div.reveal-enter,
+  .industry-list > .reveal-enter {
+    --reveal-x: 0px;
+    --reveal-y: 18px;
+    --reveal-delay: 0ms;
+  }
   .solution-tabs {
     grid-template-columns: 1fr;
     gap: 0;
